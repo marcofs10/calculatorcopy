@@ -1,0 +1,31 @@
+.container{
+    width: 22em;
+    border: 2px solid black;
+}
+.numbers{
+    width: 20em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.col{
+    display: flex;
+    justify-content: space-around;
+}
+
+.num {
+    height: 4.5em;
+    width: 4.5em;
+}
+
+.op{
+    height: 4.5em;
+    width: 4.5em;
+}
+
+.equal{
+    height: 4.5em;
+    width: 4.5em;
+}
