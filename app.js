@@ -29,14 +29,16 @@ eraser.addEventListener('click', erase)
 
 function insertNumber(number) {
     animation(number);
-/*
-    if(num1Chosen==true){
-        opChosen==true;
-    }*/
-    if(opChosen == true){
+
+    if(num1Chosen==true && opChosen==false){
+        opChosen=true;
         clear();
-        opChosen = false;
     }
+    /*
+    if(opChosen == true){
+        
+        opChosen = false;
+    }*/
     //makes sure user cannot put a 0 in front of the number
     if(number=='0'&&apretarCero == true){
         clear();
@@ -56,13 +58,14 @@ function insertNumber(number) {
 function setOperator(opArg) {
     animation(opArg);
 
-    opChosen = true;
+    /*opChosen = true;*/
     if(num1Chosen==false){
         num1 = parseInt(numDisplay.innerText);
         num1Chosen = true;
-    }else{
+    }else if(opChosen==true){
         num2 = parseInt(numDisplay.innerText)
         num2Chosen = true;
+        opChosen=false;
     }
     
     if(num2Chosen == true){
@@ -78,8 +81,9 @@ function solve() {
     num2 = parseInt(numDisplay.innerText);
     num1 = operate(opDisplay.innerText, num1, num2);
     numDisplay.innerText=`${num1}`;
-    num1Chosen = false;
+    /*num1Chosen = false;*/
     num2Chosen = false;
+    opChosen = false;
     //Once the operation is done, it resets num2
     num2 = 0;
 }
