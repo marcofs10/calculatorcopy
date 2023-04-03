@@ -1,31 +1,92 @@
-.container{
-    width: 22em;
-    border: 2px solid black;
+body{
+    background-color: #0d1b2a;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    font-family: 'Comfortaa', cursive;
+    background-image: url("background.jpg");
+    background-size: cover;
 }
-.numbers{
-    width: 20em;
+
+.container{
+    padding: 2em;
+    width: 18em;
+    height: 26em;
+    border: 2px solid rgba(255,255,255,0.82);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    backdrop-filter: blur(15px);
+}
+
+.display{
     display: flex;
-    flex-wrap: wrap;
+    color: rgba(255,255,255,0.82);
+    
+}
+
+#numDisplayCont{
+    border: 2px solid rgba(255,255,255,0.82);
+    border-radius: 0.3em 0 0 0.3em;
+    border-right: none;
+    height: 1.2em;
+    width: 100%;
+    font-size: 2em;
+    padding: 0.2em;
+    text-align: end;
+}
+
+#opDisplayCont{
+    border: 2px solid rgba(255,255,255,0.82);
+    border-radius: 0 0.3em 0.3em 0;
+    border-left: none;
+    height: 1.2em;
+    width: 1.2em;
+    font-size: 2em;
+    padding: 0.2em;
+    text-align: center;
+}
+
+.numbers{
+    width: 90%;
+    margin: 1.5em auto 0em;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 0.5em;
+    
 }
 
 .col{
     display: flex;
     justify-content: space-around;
+    height: auto;
 }
 
-.num {
-    height: 4.5em;
-    width: 4.5em;
+p{
+    margin: 0;
+    padding-top: 0.1em;
 }
 
-.op{
-    height: 4.5em;
-    width: 4.5em;
+button{
+    height: 3em;
+    width: 3em;
+    background-color: transparent;
+    color: rgba(255,255,255,0.82);
+    border: 2px solid rgba(255,255,255,0.82);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    font-size: 1.3em;
+    /*transition: all 0.01s;*/
 }
 
-.equal{
-    height: 4.5em;
-    width: 4.5em;
+.click{
+    transform: scale(0.9);
+}
+
+#erase{
+    width: 100%;
+    margin-top:1em ;
+    font-size: 1em;
+}
+svg{
+    padding-top: 0.3em;
 }
