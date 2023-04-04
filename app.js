@@ -5,6 +5,7 @@ const numDisplay = document.querySelector('#numDisplay');
 const opDisplay = document.querySelector('#opDisplay');
 const equal = document.querySelector('#equal');
 const eraser = document.querySelector('#erase');
+const clear = document.querySelector('#clear');
 let answer = 0;
 
 let operator = '';
@@ -16,32 +17,23 @@ let opChosen = false;
 //makes sure user cannot put a 0 in front of the number
 let apretarCero = true;
 
-
 nums.forEach(num => num.addEventListener('click', () => insertNumber(num.innerText)))
-
 ops.forEach(op => op.addEventListener('click', () => setOperator(op.innerText)))
-
 equal.addEventListener('click', solve)
-
 eraser.addEventListener('click', erase)
-
-
+clear.addEventListener('click', toclear)
 
 function insertNumber(number) {
     animation(number);
 
     if(num1Chosen==true && opChosen==false){
         opChosen=true;
-        clear();
+        cls();
     }
-    /*
-    if(opChosen == true){
-        
-        opChosen = false;
-    }*/
+
     //makes sure user cannot put a 0 in front of the number
     if(number=='0'&&apretarCero == true){
-        clear();
+        cls();
         number='0';
     }else{
         apretarCero = false;
@@ -58,7 +50,6 @@ function insertNumber(number) {
 function setOperator(opArg) {
     animation(opArg);
 
-    /*opChosen = true;*/
     if(num1Chosen==false){
         num1 = parseInt(numDisplay.innerText);
         num1Chosen = true;
@@ -101,7 +92,7 @@ function operate(operator, num1, num2) {
     }
 }
 
-function clear(){
+function cls(){
     numDisplay.innerText = '0';
 }
 
@@ -112,6 +103,19 @@ function erase(){
     if(numDisplay.innerText==''){
         numDisplay.innerText = '0';
     }
+}
+
+function toclear(){
+    animation('clear');
+
+    cls();
+    opDisplay.innerText='';
+    num1Chosen=false;
+    num2Chosen=false;
+    opChosen=false;
+    num1=0;
+    num2=0;
+    operator = '';
 }
 
 function animation(button){
